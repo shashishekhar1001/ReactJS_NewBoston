@@ -10,35 +10,15 @@
     <!-- <script src="js/components/hello.js"></script> -->
   </head>
   <body>
-      <div id="example"></div>
+      <div id="root"></div>
       <script type="text/babel">
-
-        function formatUserName(user) {
-            return user.firstName + ' ' + user.lastName;
+        function tick() {
+            const element = (
+              <h2>It is:- {new Date().toLocaleTimeString()}.</h2>
+            );
+            ReactDOM.render(element, document.getElementById('root'));
         }
-
-        function getGreetings(user){
-          if (user) {
-            return (<h1>Hello, {formatUserName(user_name)}</h1>);
-          }
-          return (<h1>Hello, stranger!</h1>);
-        }
-        
-        const user_name = {
-          firstName: 'Harper',
-          lastName: 'Perez'
-        };
-
-
-        // const element = getGreetings();
-        const element = getGreetings(user_name);
-
-
-        ReactDOM.render(
-            element, 
-            document.getElementById("example")
-        );
-
+        setInterval(tick, 1000);
       </script>
   </body>
 </html>
