@@ -16,6 +16,13 @@
         function formatUserName(user) {
             return user.firstName + ' ' + user.lastName;
         }
+
+        function getGreetings(user){
+          if (user) {
+            return (<h1>Hello, {formatUserName(user_name)}</h1>);
+          }
+          return (<h1>Hello, stranger!</h1>);
+        }
         
         const user_name = {
           firstName: 'Harper',
@@ -23,7 +30,9 @@
         };
 
 
-        const element = (<h1>Hello, {formatUserName(user_name)}</h1>);
+        // const element = getGreetings();
+        const element = getGreetings(user_name);
+
 
         ReactDOM.render(
             element, 
